@@ -2,6 +2,8 @@
 import mido
 import random
 
+# Test
+
 root = 20 # testing with integer- round(sensor.Distance*108 + 21)
 
 note_dict = {}
