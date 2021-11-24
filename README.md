@@ -100,6 +100,7 @@ While this is great for generating chords based on one reading, the next step wo
 ### Laser Cut Snap-Fit Case
 The wiring on the proto-board seemed to interfere with the effectiveness of the distance sensor, and if I ever wanted to disconnect the sensor from the onboard pins of the raspberry pi, it would be nice to have a module that I can easily reattach. I decided to design a simple snap-together case made of acryllic to accomplish this. I housed the wiring and circuitry within the box and designed the box to fit within a smartphone camera tripod. 
 
+![Image](Assembly_Img.PNG)
 
 ```markdown
 Syntax highlighted code block
