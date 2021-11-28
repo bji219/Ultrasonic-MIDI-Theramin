@@ -1,6 +1,7 @@
 # This python file contains the chord library based on the distance from the ultrasonic distance sensor
+# import random # should be cached when main func called
 def Chord_Lib(reading): 
-	import random
+	
 	
 	# set the variable root equal to the distance sensor reading
 	root = reading
