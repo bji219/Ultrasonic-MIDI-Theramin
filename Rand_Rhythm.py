@@ -1,4 +1,4 @@
-import random
+# import random # should be cached when called in main func
 # Generate random rhythm 
 def Beat(bpm):
 
