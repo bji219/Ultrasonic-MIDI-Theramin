@@ -43,7 +43,7 @@ while True:
     # print(note1)
     # print((chord[3]))
     if len(chord) >3:
-        print(chord[3])
+        # print(chord[3])
         note4 = mido.Message('note_on', note = chord[3])
         outport.send(note4)
 
