@@ -1,5 +1,5 @@
 # This python file contains the chord library based on the distance from the ultrasonic distance sensor
-# import random # should be cached when main func called
+import random # should be cached when main func called
 def Chord_Lib(reading): 
 	
 	
@@ -26,24 +26,13 @@ def Chord_Lib(reading):
 			  'sus4':[root,note_dict.get('p4'),note_dict.get('p5')],
 			  'min6':[root,note_dict.get('m3'),note_dict.get('p5'),note_dict.get('p6')],
 			  'min7':[root,note_dict.get('m3'),note_dict.get('p5'),note_dict.get('m7')],
-			  'maj6': [root, note_dict.get('maj3'), note_dict.get('p5'), note_dict.get('m6')],
-			  'maj7': [root, note_dict.get('maj3'), note_dict.get('p5'), note_dict.get('maj7')],
-			  'min_maj7': [root, note_dict.get('m3'), note_dict.get('p5'), note_dict.get('maj7')],
-			  'dom7': [root, note_dict.get('maj3'), note_dict.get('p5'), note_dict.get('m7')]};
+			  'maj6': [root,note_dict.get('maj3'),note_dict.get('p5'),note_dict.get('p6')],
+			  'maj7': [root,note_dict.get('maj3'),note_dict.get('p5'),note_dict.get('maj7')],
+			  'min_maj7': [root,note_dict.get('m3'),note_dict.get('p5'),note_dict.get('maj7')],
+			  'dom7': [root,note_dict.get('maj3'),note_dict.get('p5'),note_dict.get('m7')]};
 
 	# random chord (3 or 4 notes)
 	choice = random.choice(list(chord_dict.values()))
 	
 	# Return array of MIDI values
 	return(choice)
-	# print(choice)
-
-	#note1 = mido.Message('note_on', note = choice[0])
-	#note2 = mido.Message('note_on', note = choice[1])
-	#note3 = mido.Message('note_on', note = choice[2])
-
-	#if len(choice) >3:
-	#	note4 = mido.Message('note_on', note = choice[3])
-	#	print(note1,note2,note3,note4)
-	#else:
-	#	print(note1,note2,note3)
