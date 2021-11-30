@@ -29,7 +29,11 @@ def Chord_Lib(reading):
 			  'maj6': [root,note_dict.get('maj3'),note_dict.get('p5'),note_dict.get('p6')],
 			  'maj7': [root,note_dict.get('maj3'),note_dict.get('p5'),note_dict.get('maj7')],
 			  'min_maj7': [root,note_dict.get('m3'),note_dict.get('p5'),note_dict.get('maj7')],
-			  'dom7': [root,note_dict.get('maj3'),note_dict.get('p5'),note_dict.get('m7')]};
+			  'dom7': [root,note_dict.get('maj3'),note_dict.get('p5'),note_dict.get('m7')],
+                          'fifthy': [root,note_dict.get('p5'),note_dict.get('oct')],
+                          'fifthier': [root,note_dict.get('p5'),note_dict.get('oct'),note_dict.get('twlth')],
+                          'fourthy': [root,note_dict.get('p4'),note_dict.get('m7')],
+                          'fourthier': [root,note_dict.get('p4'),note_dict.get('m7'),note_dict.get('shp9')]};
 
 	# random chord (3 or 4 notes)
 	choice = random.choice(list(chord_dict.values()))
