@@ -1,6 +1,7 @@
 # This python file contains the chord library based on the distance from the ultrasonic distance sensor
 import random # should be cached when main func called
-def Chord_Lib(reading): 
+import fnmatch # wildcards
+def Chord_Lib(reading,mode_in): 
 	
 	
 	# set the variable root equal to the distance sensor reading
@@ -34,9 +35,24 @@ def Chord_Lib(reading):
                           'fifthier': [root,note_dict.get('p5'),note_dict.get('oct'),note_dict.get('twlth')],
                           'fourthy': [root,note_dict.get('p4'),note_dict.get('m7')],
                           'fourthier': [root,note_dict.get('p4'),note_dict.get('m7'),note_dict.get('shp9')]};
-
-	# random chord (3 or 4 notes)
-	choice = random.choice(list(chord_dict.values()))
 	
+	# Create sub-dictionaries for other synthesizer modes
+	major_chords = {j:chord_dict[j] for j in (fnmatch.filter(chord_dict.keys(), 'maj*'))}
+	minor_chords = {k:chord_dict[k] for k in (fnmatch.filter(chord_dict.keys(), 'min*'))}
+	sussy_chords = {l:chord_dict[l] for l in (fnmatch.filter(chord_dict.keys(), 'sus*'))}
+	fifth = {m:chord_dict[m] for m in (fnmatch.filter(chord_dict.keys(), 'fifth*'))}
+	fourth = {n:chord_dict[n] for n in (fnmatch.filter(chord_dict.keys(), 'fourth*'))}
+	sussy_chords.update(fifth,fourth)
+
+	if mode_in == "rand"
+		# random chord (3 or 4 notes)
+		choice = random.choice(list(chord_dict.values()))
+	elif mode_in == "maj"
+		choice = random.choice(list(major_chords.values()))
+	elif mode_in == "min"
+		choice = random.choice(list(minor_chords.values()))	
+	elif mode_in == "sus"
+		choice = random.choice(list(sussy_chords.values()))	
+		
 	# Return array of MIDI values
 	return(choice)
